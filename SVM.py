@@ -41,4 +41,10 @@ plt.show()
 column_types = cell_df.dtypes #look at the column types
 print(column_types)
 
+#====================================drop non numerical columns=============================
+cell_df = cell_df[pd.to_numeric(cell_df['BareNuc'], errors='coerce').notnull()]
+cell_df['BareNuc'] = cell_df['BareNuc'].astype('int')
+column_types = cell_df.dtypes #look at the column types
+print(column_types)
+
 
