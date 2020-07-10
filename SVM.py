@@ -5,6 +5,10 @@ import numpy as np
 import scipy.optimize as opt
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
+from sklearn import svm
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+import itertools
 import matplotlib.pyplot as plt
 # %matplotlib inline  #useful in Jupyter notebooks
 
@@ -67,3 +71,19 @@ print(y)
 X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2, random_state=4)
 print ('Train set:', X_train.shape,  y_train.shape)
 print ('Test set:', X_test.shape,  y_test.shape)
+
+
+
+#=====================================MODELLING SVM WITH SCIKIT-LEARN===================================
+
+#=========================================training the model=================================
+clf = svm.SVC(kernel='rbf')
+clf.fit(X_train, y_train) 
+
+#=======================================Predicting with model================================
+yhat = clf.predict(X_test)
+yhat [0:5]
+
+
+
+#==========================================EVALUATING THE MODEL=========================================
