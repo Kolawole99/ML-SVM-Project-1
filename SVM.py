@@ -47,4 +47,9 @@ cell_df['BareNuc'] = cell_df['BareNuc'].astype('int')
 column_types = cell_df.dtypes #look at the column types
 print(column_types)
 
+#======================================define the feature set===================================
+feature_df = cell_df[['Clump', 'UnifSize', 'UnifShape', 'MargAdh', 'SingEpiSize', 'BareNuc', 'BlandChrom', 'NormNucl', 'Mit']]
+X = np.asarray(feature_df)
+X[0:5]
+
 
