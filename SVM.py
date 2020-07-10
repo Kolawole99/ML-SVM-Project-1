@@ -37,4 +37,8 @@ plt.show()
 
 
 
+#====================================DATA PREPROCESSING AND SELECTION=====================================
+column_types = cell_df.dtypes #look at the column types
+print(column_types)
+
 
