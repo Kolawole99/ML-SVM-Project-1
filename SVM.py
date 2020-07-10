@@ -8,6 +8,8 @@ from sklearn.model_selection import train_test_split
 from sklearn import svm
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
+from sklearn.metrics import f1_score
+from sklearn.metrics import jaccard_score
 import itertools
 import matplotlib.pyplot as plt
 # %matplotlib inline  #useful in Jupyter notebooks
@@ -127,3 +129,12 @@ print (classification_report(y_test, yhat))
 #===============================Plot non-normalized confusion matrix==================================
 plt.figure()
 plot_confusion_matrix(cnf_matrix, classes=['Benign(2)','Malignant(4)'],normalize= False,  title='Confusion matrix')
+
+
+#============================================F1-Score=================================
+f1_score = f1_score(y_test, yhat, average='weighted') 
+print(f1_score)
+
+#=========================================Jaccard Similarity Index=============================
+from sklearn.metrics import jaccard_similarity_score
+jaccard_similarity_score(y_test, yhat)
