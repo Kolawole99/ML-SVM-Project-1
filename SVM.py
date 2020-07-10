@@ -38,7 +38,9 @@ plt.show()
 
 
 #====================================DATA PREPROCESSING AND SELECTION=====================================
-column_types = cell_df.dtypes #look at the column types
+
+#======================================look at the column types================================
+column_types = cell_df.dtypes 
 print(column_types)
 
 #====================================drop non numerical columns=============================
@@ -58,3 +60,10 @@ cell_df['Class'] = cell_df['Class'].astype('int')
 y = np.asarray(cell_df['Class'])
 y [0:5]
 print(y)
+
+
+
+#==========================================TRAIN/TEST SPLIT=====================================
+X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.2, random_state=4)
+print ('Train set:', X_train.shape,  y_train.shape)
+print ('Test set:', X_test.shape,  y_test.shape)
