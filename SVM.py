@@ -51,8 +51,10 @@ print(column_types)
 feature_df = cell_df[['Clump', 'UnifSize', 'UnifShape', 'MargAdh', 'SingEpiSize', 'BareNuc', 'BlandChrom', 'NormNucl', 'Mit']]
 X = np.asarray(feature_df)
 X[0:5]
+print(X)
 
-#===========================Change target value measurement to reflect binary=====================
+#=======================================Target variable binary================================
 cell_df['Class'] = cell_df['Class'].astype('int')
 y = np.asarray(cell_df['Class'])
 y [0:5]
+print(y)
